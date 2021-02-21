@@ -6,11 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const deleteAll = document.querySelector('#delete-all')
   deleteAll.addEventListener('click', handleDeleteAll)
 
-  const body = document.querySelector('game-list-item')
-  const createButton = document.querySelector('#create-button')
-  createButton.addEventListener('click', () => {
-    handleSubmitForm(body)
-  })
 })
 
 
@@ -21,7 +16,8 @@ const handleSubmitForm = function (evt) {
   const createGame = document.createElement('li')
   createGame.classList.add('game-list-item')
 
-  createGame.textContent = `Name: ${evt.target.name.value}, Genre: ${evt.target.genre.value} Ratings: ${evt.target.rating.value}`
+  createGame.textContent = `Name: ${this.name.value}, Genre: ${this.genre.value} Ratings: ${this.rating.value}`
+  console.log('Is this working ')
 
   resultParagraph.appendChild(createGame)
 
@@ -34,10 +30,3 @@ const handleDeleteAll = function (evt) {
   gameList.textContent = ''
 }
 
-const createNewButton = (parentElement) => {
-  const newButton = document.createElement('button')
-  newButton.textContent = "Delete"
-  parentElement.appendChild(newButton)
-  console.log(newButton)
-  console.log(parentElement)
-}

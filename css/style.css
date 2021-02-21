@@ -66,3 +66,28 @@ button, input[type="submit"] {
   color: white;
   border-radius: 3px;
 }
+
+
+.rating:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rating:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:20px;
+  color:#ccc;
+}
+.rating:not(:checked) > label:before {
+  content: '★ ';
+}
+.rating > input:checked ~ label {
+  color: #ffc700;    
+}
+
+.star{
+color: #ffc700
+}
